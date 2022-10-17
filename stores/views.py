@@ -1,6 +1,6 @@
+from ast import Try
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
-
 from stores import models
 from stores.forms import StoreItemForm
 
@@ -37,6 +37,12 @@ def update_store_item(request, item_id):
         "form": form,
     }
     return render(request, "update_store_item.html", context)
+
+def delete_store_item(request, item_id):
+    store_item = models.StoreItem.objects.get(id=item_id)
+    store_item.delete()
+    return redirect("store-item-list")
+
 
 
 
