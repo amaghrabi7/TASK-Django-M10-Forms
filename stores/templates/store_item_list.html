@@ -36,8 +36,8 @@
               <h5 class="card-title">{{ item.name }}</h3>
                 <h6 class="card-subtitle mb-2 text-muted">Kind: {{ item.kind }}</h6>
                 <p class="card-text">{{ item.description }}</p> 
-                <button><a href="{% url 'update-store-item' item_id=item.id %}" >Edit</a></button>
-                <button><a href="{% url 'delete-store-item' item_id=item.id %}" >Delete</a></button>
+                <a href="{% url 'update-store-item' item_id=item.id %}" >Edit</a>
+                <a href="{% url 'delete-store-item' item_id=item.id %}" >Delete</a>
               </div>
             </div>
         </div>
